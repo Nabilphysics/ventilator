@@ -144,6 +144,10 @@ void expiratoryLoop(){
     continuousVolumeChangeAllModes = volume;
     timeTrack = timeTrack + (timeDifference / 1000);
 
+
+///SIMV Trigger (pressure trigger of 1.0 cm H2O, flow triggers ranging from 0.7 to 2.0 L/min)
+    if((timeTrack > syncTime) && (flowRate > trig))
+   
     //How Often Serial Data will Show
     if (timeTrack > timeAfterDataShow) {
       motorSpeedAllModes = motorPEEPSpeed;

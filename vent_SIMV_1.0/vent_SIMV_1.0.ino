@@ -105,10 +105,10 @@ void setup() {
   breathCycleTime = int((60 / float(bpm)) * 1000); //in millisecond
   nonSyncTime = breathCycleTime * 0.9; //for SIMV Mode. to detect Sync Time. e.g. if breath cycle =10 then 9 is non sycc period 
   Te = (breathCycleTime - Ti); //in millisecond
-  syncTime = nonSyncTime - Ti; //in SIMV if trigger happens in this time period SIMV will give breath early
+  syncTime = nonSyncTime - Ti; //(in millisecond)in SIMV if trigger happens in this time period SIMV will give breath early
   
   targetFlowRate = Tv / ((float(Ti) / float(1000))); // in ml
-  
+ 
   Serial.println("End of Setup");
 }
 
