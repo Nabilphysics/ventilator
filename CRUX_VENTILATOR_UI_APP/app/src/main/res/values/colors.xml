@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#000a12</color>
+    <color name="colorAccent">#b71c1c</color>
+    <color name="colorWarning">#b71c1c</color>
+    <!--<color name="colorSecondary">#D84315</color>-->
+    <color name="color_background_measured">#000000</color>
+    <color name="color_black">#000000</color>
+    <color name="color_output">#ffffff</color>
+    <color name="color_measured_label">#ffffff</color>
+    <color name="color_window_background">#090808</color>
+    <color name="color_pressure_graph">#FF7F21</color>
+    <color name="color_flow_graph">#6aa2ff</color>
+    <color name="color_vt_graph">#6aff6a</color>
+
+    <color name="color_mode_activated">#66BB6A</color>
+    <color name="color_mode_deactivated">#FFFFFF</color>
+    <color name="color_bpm">#2196f3</color>
+
+</resources>

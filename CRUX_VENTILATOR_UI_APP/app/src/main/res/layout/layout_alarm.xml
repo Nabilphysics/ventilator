@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetAlarm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_regular"
+    android:background="@color/colorPrimary"
+    android:padding="@dimen/padding_regular"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+
+                    android:id="@+id/tvAlertInputHighContainer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alert_input_default_color"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        android:id="@+id/tvTvAlertInputHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102"
+                        android:textSize="@dimen/text_size_large"
+                        app:fontFamily="@font/exo_2_bold">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/high"
+                        app:fontFamily="@font/roboto_light">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+
+                    android:id="@+id/tvAlertInputLowContainer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alert_input_default_color"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_regular">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        android:id="@+id/tvTvAlertInputLow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102"
+                        android:textSize="@dimen/text_size_large"
+                        app:fontFamily="@font/exo_2_bold">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/low"
+                        app:fontFamily="@font/roboto_light">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_regular"
+                    android:text="@string/tv_alert_value"
+                    app:fontFamily="@font/roboto_medium"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_regular"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/pipAlertInputHighContainer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alert_input_default_color"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        android:id="@+id/tvPipAlertInputHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102"
+                        android:textSize="@dimen/text_size_large"
+                        app:fontFamily="@font/exo_2_bold">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/high"
+                        app:fontFamily="@font/roboto_light">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+
+                    android:id="@+id/pipAlertInputLowContainer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alert_input_default_color"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_regular">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPipAlertInputLow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102"
+                        android:textSize="@dimen/text_size_large"
+                        app:fontFamily="@font/exo_2_bold">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/low"
+                        app:fontFamily="@font/roboto_light">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pip_alert_value"
+                    android:layout_marginTop="@dimen/margin_regular"
+                    app:fontFamily="@font/roboto_medium"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_regular"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/peepAlertInputHighContainer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alert_input_default_color"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPeepAlertInputHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102"
+                        android:textSize="@dimen/text_size_large"
+                        app:fontFamily="@font/exo_2_bold">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/high"
+                        app:fontFamily="@font/roboto_light">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/peepAlertInputLowContainer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alert_input_default_color"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_regular">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPeepAlertInputLow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102"
+                        android:textSize="@dimen/text_size_large"
+                        app:fontFamily="@font/exo_2_bold">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/low"
+                        app:fontFamily="@font/roboto_light">
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/peep_alert_value"
+                    android:layout_marginTop="@dimen/margin_regular"
+                    app:fontFamily="@font/roboto_medium"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_regular"
+        android:layout_below="@+id/llcHeadingContainer">
+
+        <RelativeLayout
+
+            android:id="@+id/llcTextInputContainer"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_regular"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleWrittenValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Written Input"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAlertInputValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Written input"
+                android:padding="@dimen/padding_small"
+                android:layout_toEndOf="@+id/tvTitleWrittenValue"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_regular"
+                android:inputType="numberDecimal"
+                android:background="@drawable/input_edit_text_background"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llcTextInputContainer"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleSeekValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slider Input"
+                android:layout_centerVertical="true"/>
+
+            <com.jaygoo.widget.RangeSeekBar
+                android:id="@+id/seekBarAlertInputValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tvTitleSeekValue"
+                android:layout_centerVertical="true"
+                app:rsb_gravity="center"
+                app:rsb_progress_color="@color/colorAccent"
+                app:rsb_mode="single"
+                android:layout_marginStart="@dimen/margin_regular"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/btAlertUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update_value"
+        android:layout_gravity="center_horizontal"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
