@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyPractice-RobotController.iml" filepath="$PROJECT_DIR$/MyPractice-RobotController.iml" group="RobotController" />
       <module fileurl="file://$PROJECT_DIR$/RobotController.iml" filepath="$PROJECT_DIR$/RobotController.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/RobotController-app.iml" filepath="$PROJECT_DIR$/app/RobotController-app.iml" group="RobotController/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VENTILATOR_APP.iml" filepath="$PROJECT_DIR$/.idea/modules/VENTILATOR_APP.iml" group="VENTILATOR_APP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/VENTILATOR_APP-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/VENTILATOR_APP-app.iml" group="VENTILATOR_APP/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
