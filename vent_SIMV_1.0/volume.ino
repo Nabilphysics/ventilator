@@ -4,9 +4,50 @@ int volumeError;
 void volumeControl() {
 
   /////////////////////inspiratory Phase///////////////
+  inspirationStart:
+  
   volume = 0;
-  inspiratoryLoop();
+  //inspiratoryLoop();
+    //for (timeSumming = 0; timeSumming < Ti; timeSumming = timeSumming + (timeDifference/1000)) {
+  for (timeSumming = 0; timeSumming < Ti; timeSumming = timeSumming + timeDifference) {
 
+    servoControl("close");
+    //timex = micros();
+    timex = millis();
+    analogWrite(turbineMotorPin, motorSpeed);
+    flowRate = sensirionFlow.getvalue();
+    //Serial.println(flowRate);
+    //delayMicroseconds(550);
+    delay(2);
+    pressureMeasured = pressureSenseMpx2010(pressureSenseMpx2010Pin);
+
+    //volume = flowRate * (timeDifference/1000000) + volume;     // Tidal Volume in ml
+    volume = flowRate * (timeDifference / 1000) + volume;   // Tidal Volume in ml
+
+    continuousVolumeChangeAllModes = volume;
+    //timeTrack = timeTrack + (timeDifference/1000);
+    timeTrack = timeTrack + timeDifference;
+    //timeTrackVolumeUpdate = timeTrackVolumeUpdate + timeDifference;
+
+    //timey = micros();
+    timey = millis();
+    timeDifference = timey - timex;
+
+    if (timeTrack > timeAfterDataShow) {
+      Serial.println("Inspiration");
+      motorSpeedAllModes = motorSpeed;
+      disconnectFlagAllModes = disconnectFlag;  // to make it common for all modes and keep the individual data as well for debugging
+      flowRawArray[numberOfTime] = flowRate;
+      pressureRawArrayVolume[numberOfTime] = pressureMeasured;
+      volumeRawArray[numberOfTime] = volume;
+      pressureAllModes = pressureMeasured;
+      flowRateAllModes = flowRate;
+      continuousVolumeChangeAllModes = volume;
+      serialDataOut("I");// I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Expiratory
+      numberOfTime = numberOfTime + 1;
+      timeTrack = 0;
+    }
+  }
   //float filteredFlowRate = dataFilter(flowRawArray, numberOfTime);
   float highestPressure = highestPressureCalculator(pressureRawArrayVolume, numberOfTime);
   int maxVolume = highestVolumeCalculator(volumeRawArray, numberOfTime);
@@ -64,8 +105,47 @@ void volumeControl() {
   ///////////////////Expiratory Loop/////////////////
 
   numberOfTime = 0; //reset numberOfTime from inpiratory phase
-  expiratoryLoop();
-  
+  //expiratoryLoop();
+    for (timeSumming = 0; timeSumming < Te; timeSumming = timeSumming + (timeDifference / 1000)) {
+    servoControl("open");
+
+    timex = micros();
+    analogWrite(turbineMotorPin, motorPEEPSpeed);
+
+    flowRate = sensirionFlow.getvalue();
+    delayMicroseconds(500);
+    volume = flowRate * (timeDifference / 1000000) + volume;     // Tidal Volume in ml
+    continuousVolumeChangeAllModes = volume;
+    timeTrack = timeTrack + (timeDifference / 1000);
+/*
+    Serial.print("SyncTime="); 
+    Serial.print(syncTime);
+    Serial.print(" TimeSumming=");
+    Serial.println(timeSumming);
+  */  
+//SIMV Trigger (pressure trigger of 1.0 cm H2O, flow triggers ranging from 0.7 to 2.0 L/min - 11 ml/second to 50 ml/second)
+// syncTime is 90% of Breath Cycle Time    
+    if((timeSumming > syncTime)&& (flowRate > 20) ){  
+      Serial.println("Trigger");
+     
+      goto inspirationStart;// using goto is not a good practice.
+    }
+   
+   
+    //How Often Serial Data will Show
+    if (timeTrack > timeAfterDataShow) {
+      motorSpeedAllModes = motorPEEPSpeed;
+      pressureAllModes = pressureSenseMpx2010(pressureSenseMpx2010Pin);
+      flowRateAllModes = flowRate;
+      continuousVolumeChangeAllModes = volume;
+      serialDataOut("E");// I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Exiratory
+
+      timeTrack = 0;
+    }
+    timey = micros();
+    timeDifference = timey - timex;
+
+  }
   pressureMeasured = pressureSenseMpx2010(pressureSenseMpx2010Pin);
   peepError = peep - pressureMeasured;
   ///////////// Alarm PEEP //////////////
@@ -89,77 +169,10 @@ void volumeControl() {
   serialDataOut("L");// I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Exiratory
 }
 
-void inspiratoryLoop(){
-    //for (timeSumming = 0; timeSumming < Ti; timeSumming = timeSumming + (timeDifference/1000)) {
-  for (timeSumming = 0; timeSumming < Ti; timeSumming = timeSumming + timeDifference) {
-
-    servoControl("close");
-    //timex = micros();
-    timex = millis();
-    analogWrite(turbineMotorPin, motorSpeed);
-    flowRate = sensirionFlow.getvalue();
-    //Serial.println(flowRate);
-    //delayMicroseconds(550);
-    delay(2);
-    pressureMeasured = pressureSenseMpx2010(pressureSenseMpx2010Pin);
-
-    //volume = flowRate * (timeDifference/1000000) + volume;     // Tidal Volume in ml
-    volume = flowRate * (timeDifference / 1000) + volume;   // Tidal Volume in ml
-
-    continuousVolumeChangeAllModes = volume;
-    //timeTrack = timeTrack + (timeDifference/1000);
-    timeTrack = timeTrack + timeDifference;
-    //timeTrackVolumeUpdate = timeTrackVolumeUpdate + timeDifference;
-
-    //timey = micros();
-    timey = millis();
-    timeDifference = timey - timex;
-
-    if (timeTrack > timeAfterDataShow) {
-      motorSpeedAllModes = motorSpeed;
-      disconnectFlagAllModes = disconnectFlag;  // to make it common for all modes and keep the individual data as well for debugging
-      flowRawArray[numberOfTime] = flowRate;
-      pressureRawArrayVolume[numberOfTime] = pressureMeasured;
-      volumeRawArray[numberOfTime] = volume;
-      pressureAllModes = pressureMeasured;
-      flowRateAllModes = flowRate;
-      continuousVolumeChangeAllModes = volume;
-      serialDataOut("I");// I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Expiratory
-      numberOfTime = numberOfTime + 1;
-      timeTrack = 0;
-    }
-  }
-}
-
-void expiratoryLoop(){
-    for (timeSumming = 0; timeSumming < Te; timeSumming = timeSumming + (timeDifference / 1000)) {
-    servoControl("open");
-
-    timex = micros();
-    analogWrite(turbineMotorPin, motorPEEPSpeed);
-
-    flowRate = sensirionFlow.getvalue();
-    delayMicroseconds(500);
-    volume = flowRate * (timeDifference / 1000000) + volume;     // Tidal Volume in ml
-    continuousVolumeChangeAllModes = volume;
-    timeTrack = timeTrack + (timeDifference / 1000);
-
-
-///SIMV Trigger (pressure trigger of 1.0 cm H2O, flow triggers ranging from 0.7 to 2.0 L/min)
-    if((timeTrack > syncTime) && (flowRate > trig))
-   
-    //How Often Serial Data will Show
-    if (timeTrack > timeAfterDataShow) {
-      motorSpeedAllModes = motorPEEPSpeed;
-      pressureAllModes = pressureSenseMpx2010(pressureSenseMpx2010Pin);
-      flowRateAllModes = flowRate;
-      continuousVolumeChangeAllModes = volume;
-      serialDataOut("E");// I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Exiratory
-
-      timeTrack = 0;
-    }
-    timey = micros();
-    timeDifference = timey - timex;
-
-  }
-}
+//void inspiratoryLoop(){
+//  
+//}
+//
+//void expiratoryLoop(){
+//  
+//}

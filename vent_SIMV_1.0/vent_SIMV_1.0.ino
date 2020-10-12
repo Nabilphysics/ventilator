@@ -13,6 +13,11 @@
   4) Hasan
      3D Design, Assembling      
  */  
+ /*
+  * SIMV Mode works with PRVC mode (ToDo: SIMV with Pressure Control Mode)
+  * SIMV with Support mode not incorporated
+  * 
+  */
 #include <Arduino.h>
 #include <Servo.h>
 #include <Wire.h>
@@ -38,7 +43,8 @@ uint8_t bpm;
 int Tv;
 int Ti;
 int Te;
-int nonSyncTime;  // for SIMV
+float nonSyncTime;  // for SIMV
+float syncTime;
 float peep;
 int pip;
 int breathCycleTime;
@@ -79,9 +85,9 @@ void setup() {
   oxygenServo.write(30);
   airServo.write(95);
   sensorCallibration();
- // getVentFrame = "v102501.5042090050025150702";
+  getVentFrame = "v061502.0042090050025150702";
  // getVentFrame = "p105001.5041090050025150702";
-  getVentFrame = "s";
+ // getVentFrame = "s";
   mode = getVentFrame.substring(0, 1);
     bpm = getVentFrame.substring(1, 3).toInt(); //BPM=breath per minute
     Tv = getVentFrame.substring(3, 6).toInt(); //Tidal Volume in ml
@@ -103,7 +109,7 @@ void setup() {
 //  pip = getVentFrame.substring(11, 13).toInt();
 //  motorSpeed = getVentFrame.substring(13, 16).toInt();
   breathCycleTime = int((60 / float(bpm)) * 1000); //in millisecond
-  nonSyncTime = breathCycleTime * 0.9; //for SIMV Mode. to detect Sync Time. e.g. if breath cycle =10 then 9 is non sycc period 
+  nonSyncTime = breathCycleTime * 0.9; //for SIMV Mode. to detect Sync Time. e.g. if breath cycle =10 then 9 is non sync period 
   Te = (breathCycleTime - Ti); //in millisecond
   syncTime = nonSyncTime - Ti; //(in millisecond)in SIMV if trigger happens in this time period SIMV will give breath early
   
@@ -134,6 +140,9 @@ void loop() {
     breathCycleTime = int((60 / float(bpm)) * 1000); //in millisecond
     Te = (breathCycleTime - Ti); //in millisecond
     targetFlowRate = Tv / ((float(Ti) / float(1000))); // in ml
+    nonSyncTime = breathCycleTime * 0.9; //for SIMV Mode. to detect Sync Time. e.g. if breath cycle =10 then 9 is non sync period 
+    Te = (breathCycleTime - Ti); //in millisecond
+    syncTime = nonSyncTime - Ti; //(in millisecond)in SIMV if trigger happens in this time period SIMV will give breath early
     //breathCycleTime = 20; Ti = 1000; Te = 2000;
   }
   //vent input=M,BPM,Tv(3 digit only),Ti,PEEP,PIP,TvAlarmHigh,TvAlarmLow,pipAlarmHigh,pipAlarmLow,peepAlarmHigh,peepAlarmLow

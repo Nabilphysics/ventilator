@@ -69,11 +69,13 @@ void serialDataOut(String dataEvent) {
     // Serial.println(dataOut2);
 //      Serial.print("pressure= ");
 //      Serial.print(pressureSenseMpx2010(pressureSenseMpx2010Pin));
-  //    Serial.print("volume= ");
-//      Serial.print(volume);
-//   
-//      Serial.print(" ");
-//      Serial.print(sensirionFlow.getvalue());
+    /*
+        Serial.print("volume= ");
+        Serial.print(volume);
+  
+        Serial.print(" Flow=");
+        Serial.println(sensirionFlow.getvalue());
+     */
 //      Serial.print(" ");
 //      Serial.println(pressureSenseMpx2010(pressureSenseMpx2010Pin));
       
