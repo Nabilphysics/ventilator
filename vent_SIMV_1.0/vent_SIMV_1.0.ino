@@ -57,7 +57,8 @@ int peepAlarmHigh;
 int peepAlarmLow;
 int pipAlarmHigh;
 int pipAlarmLow;
-
+int simvTriggerFlow;
+int simvOnOff;
 
 //----------------------------------------------------------
 void setup() {
@@ -130,13 +131,14 @@ void loop() {
     Ti = getVentFrame.substring(6, 9).toFloat() * 1000; //in millisecond
     peep = getVentFrame.substring(9, 11).toInt();
     pip = getVentFrame.substring(11, 13).toInt();
-    TvAlarmHigh = getVentFrame.substring(13, 16).toInt(); // 3 digit, since highest 999
-    TvAlarmLow = getVentFrame.substring(16,19).toInt();// 3 digit
-    pipAlarmHigh = getVentFrame.substring(19,21).toInt(); //2 digit
-    pipAlarmLow = getVentFrame.substring(21,23).toInt(); //2 digit
-    peepAlarmHigh = getVentFrame.substring(23,25).toInt(); // 2 digit
-    peepAlarmLow = getVentFrame.substring(25,27).toInt(); // 2 digit
-    
+    TvAlarmHigh = getVentFrame.substring(13, 16).toInt(); // 3 digits, since highest 999
+    TvAlarmLow = getVentFrame.substring(16,19).toInt();// 3 digits
+    pipAlarmHigh = getVentFrame.substring(19,21).toInt(); //2 digits
+    pipAlarmLow = getVentFrame.substring(21,23).toInt(); //2 digits
+    peepAlarmHigh = getVentFrame.substring(23,25).toInt(); // 2 digits
+    peepAlarmLow = getVentFrame.substring(25,27).toInt(); // 2 digits
+    simvTriggerFlow = getVentFrame.substring(27,29).toInt();//2 digits ,flow triggers ranging from 0.7 to 2.0 L/min - 11 ml/second to 50 ml/second
+    simvOnOff = getVentFrame.substring(29,30).toInt();//1 digit, 1= SIMV ON , 0= SIMV OFF 
 
     breathCycleTime = int((60 / float(bpm)) * 1000); //in millisecond
     Te = (breathCycleTime - Ti); //in millisecond
@@ -227,8 +229,5 @@ flowRate = sensirionFlow.getvalue();
     pressureControl();
   }
   
-  if (mode == "q") {
-   simv();
-  }
 
 }
