@@ -148,6 +148,7 @@ void loop() {
   //vent input=M,BPM,Tv(3 digit only),Ti,PEEP,PIP,TvAlarmHigh,TvAlarmLow,pipAlarmHigh,pipAlarmLow,peepAlarmHigh,peepAlarmLow
   //           V,20,999,1.5,05,20,900,500,25,15,07,02      //p155001.5052090050025150702
 
+/// Restart Mechanism if Sensor Error Occured 
 flowRate = sensirionFlow.getvalue();
    if((flowRate < -4500.0)||(flowRate > 4500.00)){
       Serial.println(flowRate);
