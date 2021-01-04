@@ -7,4 +7,5 @@ Open source turbine based medical ventilator.
 <br> Maruf Hossain Rahat (Mechanical Design Lead, Research)
 <br> Fozlerabbi Shafi (GUI App)
 <br> Hasan Sohag (Mechanical Design, Assembling)
-
+</br>
+![](Photo/crux%20open%20source%20ventilator.jpg)
