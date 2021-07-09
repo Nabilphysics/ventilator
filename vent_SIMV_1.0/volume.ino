@@ -11,7 +11,7 @@ void volumeControl() {
     //for (timeSumming = 0; timeSumming < Ti; timeSumming = timeSumming + (timeDifference/1000)) {
   for (timeSumming = 0; timeSumming < Ti; timeSumming = timeSumming + timeDifference) {
 
-    servoControl("close");
+    servoControl("close"); //Pressure Release Mechanism OFF to Apply pressure through Patient Circuit.
     //timex = micros();
     timex = millis();
     analogWrite(turbineMotorPin, motorSpeed);
@@ -19,12 +19,12 @@ void volumeControl() {
     //Serial.println(flowRate);
     //delayMicroseconds(550);
     delay(2);
-    pressureMeasured = pressureSenseMpx2010(pressureSenseMpx2010Pin);
+    pressureMeasured = pressureSenseMpx2010(pressureSenseMpx2010Pin); //from MPX2010DP Pressure Sensor
 
     //volume = flowRate * (timeDifference/1000000) + volume;     // Tidal Volume in ml
     volume = flowRate * (timeDifference / 1000) + volume;   // Tidal Volume in ml
 
-    continuousVolumeChangeAllModes = volume;
+    continuousVolumeChangeAllModes = volume; 
     //timeTrack = timeTrack + (timeDifference/1000);
     timeTrack = timeTrack + timeDifference;
     //timeTrackVolumeUpdate = timeTrackVolumeUpdate + timeDifference;
@@ -43,13 +43,13 @@ void volumeControl() {
       pressureAllModes = pressureMeasured;
       flowRateAllModes = flowRate;
       continuousVolumeChangeAllModes = volume;
-      serialDataOut("I");// I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Expiratory
+      serialDataOut("I");// For Debugging, I=During Inspiratory or B=Between Inspiratory & Expiratory or E=During Expiratory or L= End of Expiratory
       numberOfTime = numberOfTime + 1;
       timeTrack = 0;
     }
   }
   //float filteredFlowRate = dataFilter(flowRawArray, numberOfTime);
-  float highestPressure = highestPressureCalculator(pressureRawArrayVolume, numberOfTime);
+  float highestPressure = highestPressureCalculator(pressureRawArrayVolume, numberOfTime);//pressureRawArrayVolume means Pressure During PRVC mode
   int maxVolume = highestVolumeCalculator(volumeRawArray, numberOfTime);
   volume = maxVolume;
 
@@ -80,7 +80,7 @@ void volumeControl() {
   }
   ///////////////////End Patient Circuit Disconnect Detection Flag ///////////////////
 
-  if ( (volumeError >= -1) && ( 1 > volumeError)) {
+  if ( (volumeError >= -1) && ( 1 > volumeError)) { //Error threshold value to reduce Jitters when volume has reached very close to targetted volume.  
     motorSpeed = motorSpeed + 0;
   }
   else {
@@ -107,7 +107,7 @@ void volumeControl() {
   numberOfTime = 0; //reset numberOfTime from inpiratory phase
   //expiratoryLoop();
     for (timeSumming = 0; timeSumming < Te; timeSumming = timeSumming + (timeDifference / 1000)) {
-    servoControl("open");
+    servoControl("open");// Pressure Release Mechanism (Servo is pushed downward)
 
     timex = micros();
     analogWrite(turbineMotorPin, motorPEEPSpeed);
@@ -125,7 +125,7 @@ void volumeControl() {
   */  
 //SIMV Trigger (pressure trigger of 1.0 cm H2O, flow triggers ranging from 0.7 to 2.0 L/min - 11 ml/second to 50 ml/second)
 // syncTime is 90% of Breath Cycle Time    
-    if((timeSumming > syncTime)&& (flowRate > 20) ){  
+    if((timeSumming > syncTime)&& (flowRate > 20) ){  //20ml/Second is hard coded. You can change it and rather than hard coded you can receive from Android App. 
       Serial.println("Trigger");
      
       goto inspirationStart;// using goto is not a good practice.
@@ -152,12 +152,12 @@ void volumeControl() {
   alarmCheckPeep(pressureMeasured); //peepAlarm = "HP" or "LP" or "NA" //High PEEP or Low PEEP or No Alarm
 
 
-  if ( (peepError >= -0.50) && ( 0.50 > peepError)) {
+  if ( (peepError >= -0.50) && ( 0.50 > peepError)) {  //Error Stabilization , ignore if PEEP error is within  +-50cmH2O
     motorPEEPSpeed = motorPEEPSpeed + 0;
     //Serial.println("PEEP Constrain");
   }
   else {
-    motorPEEPSpeed = motorPEEPSpeed + peepError * 1.5; //1.0
+    motorPEEPSpeed = motorPEEPSpeed + peepError * 1.5; //1.5 = Proportional Constant 
     if (motorPEEPSpeed  > motorPEEPSpeedMax) {
       motorPEEPSpeed  = motorPEEPSpeedMax;
     }
