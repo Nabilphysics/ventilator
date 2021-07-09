@@ -3,14 +3,18 @@
 
 //////////Ventilator Hardware Pin//////////////
 //Hardware Connection: 
-//Pin:11 > servo or relay (for BLDC Version)
-//Servo 1 > Servo One(Release Servo) > Pin 5
-//Servo 2 > ArduinoMega Pin 52
+
+//Servo 1 > Servo One(Pressure Release Servo) > Pin 5
 //pin:9 > turbine motor(bldc or dc)
 //A0: > Pressure Sensor, 
-//D17: > FlowSensorPower
+//D17: > FlowSensorPower(5V)
+// Indicator LED > A5
 //Left to Right- VDD,SCL(A5),GND,SDA(A4)
-//Sensirion Flow Sensor: Left to Right- VDD,SCL(A5),GND,SDA(A4)
+//Sensirion Flow Sensor: Left to Right- VDD,SCL(Arduino - A5),GND,SDA(Arduino - A4)
+//Unused in this version
+//Pin:11 > servo or relay (for BLDC Version)
+//Servo 2 > ArduinoMega Pin 52
+
 //////// Select Motor Type /////////////
 //#define bldcMotor
 #define dcMotor
