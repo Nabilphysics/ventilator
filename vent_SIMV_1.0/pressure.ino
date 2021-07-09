@@ -49,7 +49,7 @@ void pressureControl() {
       pressureAllModes = realPressure;
       pError = targetPressure - realPressure;
 
-      pressureMotorSpeed = initialPressureMotorSpeed + pError * 3;
+      pressureMotorSpeed = initialPressureMotorSpeed + pError * 3; //3= Kp, Proportional Constant 
       if (disconnectFlagPressureMode == true) {
         pressureMotorSpeed = initialPressureMotorSpeed;
       }
@@ -81,7 +81,7 @@ void pressureControl() {
       //Serial.println(initialPressureMotorSpeed);
 
 
-      if (timeSumming >  (Ti / 2)) {
+      if (timeSumming >  (Ti / 2)) { // Pressure After Half Time of Inspiratory Time. This is bcz Pressure Actually Goes to High after this time
         pressureRawArray[numberOfTime] = realPressure;
         numberOfTime = numberOfTime + 1;
         //         Serial.print("Real Pressure=");
@@ -103,7 +103,7 @@ void pressureControl() {
   alarmCheckPip(filteredPressure);// pipAlarm = "HPP"; or "LPP" or "NAA" // High Peak Pressure
   alarmCheckVolume(volume); // volumeAlarm = "HV" or "LV" or "NA";
 
-  initialPressureError = targetPressure - filteredPressure;
+  initialPressureError = targetPressure - filteredPressure; // Dynamic Feed Forward Algorithm
   if (initialPressureError > 7) { // To Avoid Sudden Motor Speed Increase
     initialPressureError = 7;
   }
@@ -158,6 +158,7 @@ void pressureControl() {
   ///////////////////Expiratory Loop/////////////////
 
   numberOfTime = 0; //reset numberOfTime from inpiratory phase
+  
   for (timeSumming = 0; timeSumming < Te; timeSumming = timeSumming + timeDiff) {
     int timex = millis();
     servoControl("open");
@@ -195,7 +196,7 @@ void pressureControl() {
       ema = EMA_fun(0.20, realPressure, ema);
       ema_ema = EMA_fun(0.20, ema, ema_ema);
 
-      float DEMA = 2 * ema - ema_ema;
+      float DEMA = 2 * ema - ema_ema; //DEMA= Double Exponential Moving Average Filter
       //Serial.print(disconnectFlagPressureMode);
       //Serial.print("inExpPressure= ");
       //Serial.print(realPressure);
