@@ -32,7 +32,7 @@ int flowRateAllModes;
 float continuousVolumeChangeAllModes;
 uint8_t motorSpeedAllModes;
 float pressureAllModes;
-uint8_t timeAfterDataShow = 40; //ms
+uint8_t timeAfterDataShow = 40; //ms , it determines data sending interval to Android Application
 uint8_t stabilizingCounter = 0;
 
 float timex;
