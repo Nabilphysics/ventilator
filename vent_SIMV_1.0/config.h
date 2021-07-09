@@ -61,10 +61,10 @@ uint8_t servoOpenValue = 90; // Low Pressure
 uint8_t oxygenServoFullOpenValue = 170;
 //uint8_t oxygenServo;
 
-uint8_t motorSpeed = 30; //initial inspiratory motor speed 
-uint8_t motorSpeedMin = 20;
-uint8_t motorSpeedMax = 140;
-float motorPEEPSpeed = 30;
+uint8_t motorSpeed = 30; //initial inspiratory motor speed as Feed Forward
+uint8_t motorSpeedMin = 20; //Feed Forward
+uint8_t motorSpeedMax = 140; // To impose Hard Prassure Limit as security
+float motorPEEPSpeed = 30; //Feed Forward
 float motorPEEPSpeedMax = 150;
 float motorPEEPSpeedMin = 20;
 #endif
