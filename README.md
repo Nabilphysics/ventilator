@@ -4,7 +4,7 @@ Open source turbine based medical ventilator.
 <br> Video Playlist: https://www.youtube.com/playlist?list=PLWOXOpFr-Z50Q3X0qPz6WNfCwyVcnYaeS 
 <br> Contributors:
 <br> Syed Razwanul Haque Nabil (Team Lead, Code, Algorithm, Circuit)
-<> https://www.fb.com/Nabilphysics and https://www.linkedin.com/in/nabilphysics/
+<br> https://www.fb.com/Nabilphysics and https://www.linkedin.com/in/nabilphysics/
 <br> Maruf Hossain Rahat (Mechanical Design Lead, Research)
 <br> Shovon S Saha (Documentation & Research)
 <br> Fozlerabbi Shafi (GUI App)
