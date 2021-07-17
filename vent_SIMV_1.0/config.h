@@ -5,12 +5,12 @@
 //Hardware Connection: 
 
 //Servo 1 > Servo One(Pressure Release Servo) > Pin 5
-//pin:9 > turbine motor(bldc or dc)
+//pin:9 > turbine motor(bldc or dc: currently being used for turbine control) 
 //A0: > Pressure Sensor, 
 //D17: > FlowSensorPower(5V)
 // Indicator LED > A5
-//Left to Right- VDD,SCL(A5),GND,SDA(A4)
-//Sensirion Flow Sensor: Left to Right- VDD,SCL(Arduino - A5),GND,SDA(Arduino - A4)
+//Left to Right- VDD,SCL(21),GND,SDA(20) - Arduino Mega
+//Sensirion Flow Sensor: Left to Right- VDD,SCL(Arduino - 21),GND,SDA(Arduino - 20) - Arduino Mega
 //Unused in this version
 //Pin:11 > servo or relay (for BLDC Version)
 //Servo 2 > ArduinoMega Pin 52
