@@ -10,6 +10,6 @@ Open source turbine based medical ventilator.
 <br> Fozlerabbi Shafi (GUI App)
 <br> Hasan Sohag (Mechanical Design, Assembling)
 </br>
-![](Photo/crux%20open%20source%20ventilator.jpg)
-![](Photo/system%20diagram%20of%20crux%20ventilator.png)
-
+![](Project%20Gallery/crux%20open%20source%20ventilator.jpg)
+![](Project%20Gallery/system%20diagram%20of%20crux%20ventilator.png)
+![](Project%20Gallery/team%20photo.jpg)
