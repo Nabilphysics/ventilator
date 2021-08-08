@@ -1,0 +1,78 @@
+<resources>
+
+
+    <string name="app_name">CRUX Open Ventilator</string>
+    <string name="slogan">www.cruxbd.com </string>
+    <string name="version">version 1.0.0</string>
+    <string name="show_paired_device">Show Paired Device</string>
+    <string name="search_for_device">Search for device</string>
+    <string name="text_pair">Pair</string>
+    <string name="bt_condition_text_on">Bluetooth is on</string>
+    <string name="bt_condition_text_off">Bluetooth is off</string>
+    <string name="bt_switch">On/Off</string>
+    <string name="ok">Sure</string>
+    <string name="cancel">Cancel</string>
+    <string name="text_view_paired">Paired Devices</string>
+    <string name="text_scan_devices">Scan Devices</string>
+    <string name="text_stop_scan">Scan Devices</string>
+
+    <string name="text_list_paired_devices">Paired Devices</string>
+    <string name="text_list_devices">List of Devices</string>
+
+    <string name="text_connect">Connect</string>
+    <string name="text_connected">Connected</string>
+    <string name="text_disconnected">Disconnect</string>
+
+    <string name="btn_forward">forward</string>
+    <string name="btn_backward">backward</string>
+    <string name="btn_right">right</string>
+    <string name="btn_left">left</string>
+    <string name="btn_disconnect">disconnect</string>
+    <string name="light_mode">Light Control</string>
+    <string name="car_mode">Car Control</string>
+    <string name="dash">-</string>
+    <string name="app_logo">App logo</string>
+    <string name="pressure">Pressure</string>
+    <string name="vt">TV</string>
+    <string name="flow">Flow</string>
+    <string name="peep">PEEP</string>
+    <string name="bpm">BPM</string>
+    <string name="pip">PIP</string>
+    <string name="oxygen">FiO2</string>
+    <string name="insert_tv_value">Insert VT value</string>
+    <string name="insert_flow_value">Insert flow value</string>
+    <string name="insert_pressure_value">Insert pressure value</string>
+    <string name="insert_peep_value">Insert peep value</string>
+    <string name="insert_bpm_value">Insert BPM value</string>
+    <string name="insert_pip_value">Insert PIP value</string>
+    <string name="insert_oxygen_value">Insert oxygen value</string>
+    <string name="peak_pressure">Peak Pressure</string>
+    <string name="turn_on_off">Turn on/off</string>
+    <string name="n_a">N/A</string>
+    <string name="n_s">N/S</string>
+    <string name="my_device_name">My Device Name</string>
+    <string name="dummy_mac_address">A0:50:50L00:D5:D9</string>
+    <string name="ti">TI</string>
+    <string name="insert_ti_value">Insert Ti value</string>
+    <string name="ml">mL</string>
+    <string name="mlPerS">mL/s</string>
+    <string name="percentage">%</string>
+    <string name="per_minute">in minute</string>
+    <string name="cmh2o">cmH2O</string>
+    <string name="activate">Activate</string>
+    <string name="on_off">ON/OFF</string>
+    <string name="ventilator_on_and_off_switch">Ventilator ON and OFF switch</string>
+    <string name="disconnected">disconnected</string>
+    <string name="connected">connected</string>
+    <string name="tv_alert_value">TV Alert value</string>
+    <string name="pip_alert_value">PIP Alert value</string>
+    <string name="peep_alert_value">PEEP Alert value</string>
+    <string name="high">High</string>
+    <string name="low">Low</string>
+    <string name="update_value">Update Value</string>
+    <string name="current_mode">Current Mode</string>
+    <string name="toast_message_provide_valid_value">Please provide valid value</string>
+    <string name="snooze_tv_high_alarm">Snooze high TV alarm</string>
+    <string name="show_data_for_debug">Show data for debug</string>
+
+</resources>

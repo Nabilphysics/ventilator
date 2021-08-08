@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetInput"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_regular"
+    android:padding="@dimen/padding_regular"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:id="@+id/llcHeadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleInsertValue"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="Insert Pressure Value"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+
+                android:id="@+id/ieRatioContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I : E = "
+                    android:textSize="20sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    android:id="@+id/tvIERatio"
+                    android:layout_width="0dp"
+                    android:layout_weight=".4"
+                    android:layout_height="wrap_content"
+                    android:text="1:3"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpdateValue"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="UPDATE"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/llcHeadingContainer"
+        android:layout_marginTop="@dimen/margin_regular"
+        android:layout_marginBottom="@dimen/margin_regular">
+
+        <RelativeLayout
+
+            android:id="@+id/llcTextInputContainer"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+
+                android:id="@+id/tvTitleWrittenValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Written Input"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etInputValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:hint="Insert value"
+                android:layout_toEndOf="@+id/tvTitleWrittenValue"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_regular"
+                android:inputType="numberDecimal"
+                android:background="@drawable/input_edit_text_background"/>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_regular"
+            android:layout_below="@+id/llcTextInputContainer"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleSeekValue"
+                android:layout_width="0dp"
+                android:layout_weight=".2"
+                android:layout_height="wrap_content"
+                android:text="Slider Input"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"/>
+
+            <com.jaygoo.widget.RangeSeekBar
+
+                android:id="@+id/seekBarInputValue"
+                android:layout_width="0dp"
+                android:layout_weight=".8"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tvTitleSeekValue"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_regular"
+                app:rsb_mode="single"
+                app:rsb_gravity="center"
+                app:rsb_progress_color="@color/colorAccent"
+                android:layout_gravity="center_vertical"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:id="@+id/autoTiContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/llcHeadingContainer"
+        android:layout_marginTop="@dimen/margin_regular"
+        android:layout_marginBottom="@dimen/margin_regular"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Optimal TI value based on BPM"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            app:fontFamily="@font/roboto_medium"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+
+                android:id="@+id/llcTiTextInputContainer"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    android:id="@+id/tvTitleTiWrittenValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Written Input"
+                    android:layout_centerVertical="true"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etTiInputValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_small"
+                    android:hint="Insert value"
+                    android:layout_toEndOf="@+id/tvTitleTiWrittenValue"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_regular"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/input_edit_text_background"/>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_regular"
+                android:layout_below="@+id/llcTextInputContainer"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTiTitleSeekValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:text="TI Value"
+                    android:layout_centerVertical="true"/>
+
+
+                <com.jaygoo.widget.RangeSeekBar
+
+                    android:id="@+id/seekBarTiInputValue"
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tvTiTitleSeekValue"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_regular"
+                    app:rsb_mode="single"
+                    app:rsb_progress_color="@color/colorAccent"
+                    app:rsb_gravity="center"
+                    android:layout_gravity="center_vertical"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
