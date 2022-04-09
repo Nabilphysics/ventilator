@@ -1,0 +1,1197 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title "Turbine-based Ventilator "
+Date "2022-03-30"
+Rev ""
+Comp ""
+Comment1 "Designed by: Shovon S Saha"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MEGA_PRO_EMBED_CH340G___ATMEGA2560:MEGA_PRO_EMBED_CH340G___ATMEGA2560 U2
+U 1 1 62566A35
+P 8600 4200
+F 0 "U2" H 8650 1650 50  0000 R CNN
+F 1 "Arduino Mega" H 9000 1550 79  0000 R CNN
+F 2 "MODULE_MEGA_PRO_EMBED_CH340G_/_ATMEGA2560" H 8600 4200 50  0001 L BNN
+F 3 "" H 8600 4200 50  0001 L BNN
+F 4 "Manufacturer Recommendations" H 8600 4200 50  0001 L BNN "STANDARD"
+F 5 "Robotdyn" H 8600 4200 50  0001 L BNN "MANUFACTURER"
+F 6 "" H 8600 4200 50  0001 L BNN "MAXIMUM_PACKAGE_HIEGHT"
+F 7 "12/May/2017" H 8600 4200 50  0001 L BNN "PARTREV"
+	1    8600 4200
+	-1   0    0    1   
+$EndComp
+Text GLabel 9475 5000 2    50   Input ~ 0
+Turbine_Control
+Wire Wire Line
+	9475 5000 9300 5000
+Text GLabel 9475 2500 2    50   Input ~ 0
+Indicator_LED
+Text GLabel 7750 2700 0    50   Input ~ 0
+Pressure_Sensor_Input
+Text GLabel 9475 5200 2    50   Input ~ 0
+Pressure_Release_Servo
+Text GLabel 7750 4400 0    50   Input ~ 0
+SFM3300_Sensor_SDA
+Text GLabel 9475 4400 2    50   Input ~ 0
+SFM3300_Sensor_SCL
+Text GLabel 9475 4600 2    50   Input ~ 0
+SFM3300_Power
+Text GLabel 7750 6000 0    50   Input ~ 0
+Bluetooth_Rx
+Text GLabel 7750 6100 0    50   Input ~ 0
+Bluetooth_Tx
+Wire Wire Line
+	7750 6100 7900 6100
+Wire Wire Line
+	7900 6000 7750 6000
+Wire Wire Line
+	9475 4600 9300 4600
+Wire Wire Line
+	9475 2500 9300 2500
+Wire Wire Line
+	9475 5200 9300 5200
+Wire Wire Line
+	9475 4400 9300 4400
+Wire Wire Line
+	7750 4400 7900 4400
+Wire Wire Line
+	7750 2700 7900 2700
+$Comp
+L power:+5V #PWR017
+U 1 1 626D6936
+P 7700 6425
+F 0 "#PWR017" H 7700 6275 50  0001 C CNN
+F 1 "+5V" H 7715 6598 50  0000 C CNN
+F 2 "" H 7700 6425 50  0001 C CNN
+F 3 "" H 7700 6425 50  0001 C CNN
+	1    7700 6425
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 626D6A60
+P 7700 6675
+F 0 "#PWR018" H 7700 6425 50  0001 C CNN
+F 1 "GND" H 7705 6502 50  0000 C CNN
+F 2 "" H 7700 6675 50  0001 C CNN
+F 3 "" H 7700 6675 50  0001 C CNN
+	1    7700 6675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 6500 7700 6500
+Wire Wire Line
+	7700 6500 7700 6425
+Wire Wire Line
+	7900 6600 7700 6600
+Wire Wire Line
+	7700 6600 7700 6675
+$Comp
+L Connector:Screw_Terminal_01x02 J_Output4
+U 1 1 60F6365E
+P 5175 3125
+F 0 "J_Output4" H 5375 3250 50  0000 R CNN
+F 1 "Screw_Terminal_01x02" V 5175 4025 50  0001 R CNN
+F 2 "" H 5175 3125 50  0001 C CNN
+F 3 "~" H 5175 3125 50  0001 C CNN
+	1    5175 3125
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1450 3550 2500 3550
+Text Notes 1950 6475 0    39   Italic 0
+*All Battery Cells are 18650B
+Text Notes 3725 6300 0    59   ~ 0
+BMS-2
+Text Notes 2775 6300 0    59   ~ 0
+BMS-1
+Text Notes 525  4675 0    98   ~ 0
+Dual Battery Management System (BMS)
+Wire Wire Line
+	4125 2850 4250 2850
+Wire Wire Line
+	4125 2850 4125 3025
+Text GLabel 4250 2850 1    39   Input ~ 0
+5V-Android_Tab_Charging
+Wire Wire Line
+	5500 3125 5500 3200
+Wire Wire Line
+	5375 3125 5500 3125
+Wire Wire Line
+	5500 3025 5500 2950
+Wire Wire Line
+	5375 3025 5500 3025
+$Comp
+L power:GND #PWR012
+U 1 1 62536C3D
+P 5500 3200
+F 0 "#PWR012" H 5500 2950 50  0001 C CNN
+F 1 "GND" H 5505 3027 50  0000 C CNN
+F 2 "" H 5500 3200 50  0001 C CNN
+F 3 "" H 5500 3200 50  0001 C CNN
+	1    5500 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J_Input4
+U 1 1 60F63238
+P 4900 2500
+F 0 "J_Input4" V 4772 2580 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" V 4900 1500 50  0001 L CNN
+F 2 "" H 4900 2500 50  0001 C CNN
+F 3 "~" H 4900 2500 50  0001 C CNN
+	1    4900 2500
+	0    1    1    0   
+$EndComp
+Text Notes 4600 2925 0    50   ~ 0
+Buck Converter\nXL-4015\n5V
+Wire Notes Line
+	5225 3175 5225 2450
+Wire Notes Line
+	4500 2450 5225 2450
+Wire Notes Line
+	4500 3175 5225 3175
+Wire Wire Line
+	4900 2300 5375 2300
+Text GLabel 4800 2200 2    50   Input ~ 0
+12.6V
+Wire Wire Line
+	3400 5975 3525 5975
+Connection ~ 3400 5975
+Wire Wire Line
+	3400 5975 3400 6225
+Wire Wire Line
+	3275 5975 3400 5975
+$Comp
+L power:GND #PWR015
+U 1 1 62516136
+P 3400 6225
+F 0 "#PWR015" H 3400 5975 50  0001 C CNN
+F 1 "GND" H 3405 6052 50  0000 C CNN
+F 2 "" H 3400 6225 50  0001 C CNN
+F 3 "" H 3400 6225 50  0001 C CNN
+	1    3400 6225
+	1    0    0    -1  
+$EndComp
+Text Notes 3500 5800 0    47   ~ 9
+(+)
+Text Notes 3175 5800 0    47   ~ 9
+(+)
+$Comp
+L Device:Battery_Cell BT2
+U 1 1 624E9D0A
+P 4500 5675
+F 0 "BT2" H 4618 5771 50  0000 L CNN
+F 1 "Cell_4" H 4618 5680 50  0000 L CNN
+F 2 "" V 4500 5735 50  0001 C CNN
+F 3 "~" V 4500 5735 50  0001 C CNN
+	1    4500 5675
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT4
+U 1 1 624E9CF8
+P 4500 6000
+F 0 "BT4" H 4618 6096 50  0000 L CNN
+F 1 "Cell_5" H 4618 6005 50  0000 L CNN
+F 2 "" V 4500 6060 50  0001 C CNN
+F 3 "~" V 4500 6060 50  0001 C CNN
+	1    4500 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT6
+U 1 1 624E9D14
+P 4500 6300
+F 0 "BT6" H 4618 6396 50  0000 L CNN
+F 1 "Cell_6" H 4618 6305 50  0000 L CNN
+F 2 "" V 4500 6360 50  0001 C CNN
+F 3 "~" V 4500 6360 50  0001 C CNN
+	1    4500 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4225 5800 4500 5800
+Wire Wire Line
+	4500 5775 4500 5800
+Connection ~ 4500 5800
+Wire Wire Line
+	4500 5450 4500 5475
+Wire Notes Line
+	4075 6375 4075 5475
+Wire Notes Line
+	3675 5475 4075 5475
+Wire Notes Line
+	3675 5475 3675 6375
+Wire Notes Line
+	3675 6375 4075 6375
+$Comp
+L Connector:Conn_01x04_Male J4
+U 1 1 624E9CEE
+P 3925 5875
+F 0 "J4" H 4033 6064 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 4033 6065 50  0001 C CNN
+F 2 "" H 3925 5875 50  0001 C CNN
+F 3 "~" H 3925 5875 50  0001 C CNN
+	1    3925 5875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4125 5875 4225 5875
+Wire Wire Line
+	4225 5875 4225 5800
+Wire Wire Line
+	4125 5775 4175 5775
+Wire Wire Line
+	4175 5775 4175 5450
+Wire Wire Line
+	4175 5450 4500 5450
+Wire Wire Line
+	4125 5975 4225 5975
+Connection ~ 4500 6100
+Wire Wire Line
+	4500 6100 4225 6100
+Wire Wire Line
+	4225 5975 4225 6100
+Wire Wire Line
+	4125 6075 4175 6075
+Wire Wire Line
+	4175 6075 4175 6400
+Wire Wire Line
+	4175 6400 4500 6400
+$Comp
+L Connector:Conn_01x02_Male J6
+U 1 1 624E990B
+P 3725 5975
+F 0 "J6" H 3697 5857 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 3975 6050 50  0001 R CNN
+F 2 "" H 3725 5975 50  0001 C CNN
+F 3 "~" H 3725 5975 50  0001 C CNN
+	1    3725 5975
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 60F1FEF1
+P 2300 5550
+F 0 "BT1" H 2418 5646 50  0000 L CNN
+F 1 "Cell_1" H 2418 5555 50  0000 L CNN
+F 2 "" V 2300 5610 50  0001 C CNN
+F 3 "~" V 2300 5610 50  0001 C CNN
+	1    2300 5550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Battery_Cell BT5
+U 1 1 60F21E11
+P 2300 6175
+F 0 "BT5" H 2418 6271 50  0000 L CNN
+F 1 "Cell_3" H 2418 6180 50  0000 L CNN
+F 2 "" V 2300 6235 50  0001 C CNN
+F 3 "~" V 2300 6235 50  0001 C CNN
+	1    2300 6175
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2575 6050 2300 6050
+Wire Wire Line
+	2300 6075 2300 6050
+Connection ~ 2300 6050
+Wire Wire Line
+	2300 6400 2300 6375
+Wire Notes Line
+	2725 5475 2725 6375
+Wire Notes Line
+	3125 6375 2725 6375
+Wire Notes Line
+	3125 6375 3125 5475
+Wire Notes Line
+	3125 5475 2725 5475
+$Comp
+L Device:Battery_Cell BT3
+U 1 1 60F21726
+P 2300 5850
+F 0 "BT3" H 2418 5946 50  0000 L CNN
+F 1 "Cell_2" H 2418 5855 50  0000 L CNN
+F 2 "" V 2300 5910 50  0001 C CNN
+F 3 "~" V 2300 5910 50  0001 C CNN
+	1    2300 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x04_Male J5
+U 1 1 62464D9B
+P 2875 5975
+F 0 "J5" H 2847 5903 50  0000 R CNN
+F 1 "Conn_01x04_Male" H 2983 6165 50  0001 C CNN
+F 2 "" H 2875 5975 50  0001 C CNN
+F 3 "~" H 2875 5975 50  0001 C CNN
+	1    2875 5975
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2675 5975 2575 5975
+Wire Wire Line
+	2575 5975 2575 6050
+Wire Wire Line
+	2675 6075 2625 6075
+Wire Wire Line
+	2625 6075 2625 6400
+Wire Wire Line
+	2625 6400 2300 6400
+Wire Wire Line
+	2675 5875 2575 5875
+Connection ~ 2300 5750
+Wire Wire Line
+	2300 5750 2575 5750
+Wire Wire Line
+	2575 5875 2575 5750
+Wire Wire Line
+	2675 5775 2625 5775
+Wire Wire Line
+	2625 5775 2625 5450
+Wire Wire Line
+	2625 5450 2300 5450
+$Comp
+L Connector:Conn_01x02_Male J3
+U 1 1 6249E90D
+P 3075 5875
+F 0 "J3" H 3047 5757 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 3325 5950 50  0001 R CNN
+F 2 "" H 3075 5875 50  0001 C CNN
+F 3 "~" H 3075 5875 50  0001 C CNN
+	1    3075 5875
+	1    0    0    -1  
+$EndComp
+Connection ~ 2500 3550
+$Comp
+L Device:D_Small D1
+U 1 1 6245A431
+P 2800 3550
+F 0 "D1" H 2800 3343 50  0000 C CNN
+F 1 "MBR20100" H 2800 3434 50  0000 C CNN
+F 2 "" V 2800 3550 50  0001 C CNN
+F 3 "~" V 2800 3550 50  0001 C CNN
+	1    2800 3550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5375 2300 5375 2375
+$Comp
+L power:+5V #PWR010
+U 1 1 60FA4E03
+P 5500 2950
+F 0 "#PWR010" H 5500 2800 50  0001 C CNN
+F 1 "+5V" H 5515 3123 50  0000 C CNN
+F 2 "" H 5500 2950 50  0001 C CNN
+F 3 "" H 5500 2950 50  0001 C CNN
+	1    5500 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2200 4800 2300
+Wire Wire Line
+	2500 3325 2500 3550
+Wire Wire Line
+	1450 3325 1450 3550
+$Comp
+L power:GND #PWR09
+U 1 1 60F6366D
+P 5375 2375
+F 0 "#PWR09" H 5375 2125 50  0001 C CNN
+F 1 "GND" H 5380 2202 50  0000 C CNN
+F 2 "" H 5375 2375 50  0001 C CNN
+F 3 "" H 5375 2375 50  0001 C CNN
+	1    5375 2375
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	4500 3175 4500 2450
+Wire Wire Line
+	2400 2125 3450 2125
+Connection ~ 2400 2125
+Text Notes 4150 3200 0    50   ~ 0
+to\nAndroid \nTab
+Wire Wire Line
+	4125 3125 4125 3200
+Wire Wire Line
+	4025 3125 4125 3125
+Wire Wire Line
+	4025 3025 4125 3025
+Wire Wire Line
+	3450 2300 3450 2125
+$Comp
+L Connector:Screw_Terminal_01x02 J_Input3
+U 1 1 60F5D43D
+P 3550 2500
+F 0 "J_Input3" V 3422 2580 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" V 3550 1500 50  0001 L CNN
+F 2 "" H 3550 2500 50  0001 C CNN
+F 3 "~" H 3550 2500 50  0001 C CNN
+	1    3550 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J_Output3
+U 1 1 60F5D443
+P 3825 3125
+F 0 "J_Output3" H 4000 3250 50  0000 R CNN
+F 1 "Screw_Terminal_01x02" V 3825 4025 50  0001 R CNN
+F 2 "" H 3825 3125 50  0001 C CNN
+F 3 "~" H 3825 3125 50  0001 C CNN
+	1    3825 3125
+	-1   0    0    1   
+$EndComp
+Text Notes 3250 2925 0    50   ~ 0
+Buck Converter\n5V Module\nLM2576
+Wire Notes Line
+	3875 3175 3875 2450
+Wire Notes Line
+	3150 3175 3150 2450
+Wire Notes Line
+	3150 2450 3875 2450
+Wire Notes Line
+	3150 3175 3875 3175
+$Comp
+L power:GND #PWR08
+U 1 1 60F5D44E
+P 4025 2375
+F 0 "#PWR08" H 4025 2125 50  0001 C CNN
+F 1 "GND" H 4030 2202 50  0000 C CNN
+F 2 "" H 4025 2375 50  0001 C CNN
+F 3 "" H 4025 2375 50  0001 C CNN
+	1    4025 2375
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 60F5D454
+P 4125 3200
+F 0 "#PWR011" H 4125 2950 50  0001 C CNN
+F 1 "GND" H 4130 3027 50  0000 C CNN
+F 2 "" H 4125 3200 50  0001 C CNN
+F 3 "" H 4125 3200 50  0001 C CNN
+	1    4125 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 2300 4025 2300
+Wire Wire Line
+	4025 2300 4025 2375
+Wire Wire Line
+	2400 2300 2400 2125
+Wire Wire Line
+	2975 2300 2975 2375
+Wire Wire Line
+	2500 2300 2975 2300
+$Comp
+L power:GND #PWR014
+U 1 1 60F515FA
+P 2400 3325
+F 0 "#PWR014" H 2400 3075 50  0001 C CNN
+F 1 "GND" H 2405 3152 50  0000 C CNN
+F 2 "" H 2400 3325 50  0001 C CNN
+F 3 "" H 2400 3325 50  0001 C CNN
+	1    2400 3325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 60F515F0
+P 2975 2375
+F 0 "#PWR07" H 2975 2125 50  0001 C CNN
+F 1 "GND" H 2980 2202 50  0000 C CNN
+F 2 "" H 2975 2375 50  0001 C CNN
+F 3 "" H 2975 2375 50  0001 C CNN
+	1    2975 2375
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	2100 3175 2825 3175
+Wire Notes Line
+	2100 2450 2825 2450
+Wire Notes Line
+	2100 3175 2100 2450
+Wire Notes Line
+	2825 3175 2825 2450
+Text Notes 2200 2925 0    50   ~ 0
+Buck Converter\nXL-4015\n12.6V
+$Comp
+L Connector:Screw_Terminal_01x02 J_Output2
+U 1 1 60F515E1
+P 2400 3125
+F 0 "J_Output2" V 2275 2975 50  0000 R CNN
+F 1 "Screw_Terminal_01x02" V 2400 4025 50  0001 R CNN
+F 2 "" H 2400 3125 50  0001 C CNN
+F 3 "~" H 2400 3125 50  0001 C CNN
+	1    2400 3125
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J_Input2
+U 1 1 60F513AF
+P 2500 2500
+F 0 "J_Input2" V 2372 2580 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" V 2500 1500 50  0001 L CNN
+F 2 "" H 2500 2500 50  0001 C CNN
+F 3 "~" H 2500 2500 50  0001 C CNN
+	1    2500 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1350 2125 2400 2125
+Connection ~ 1350 2125
+Wire Wire Line
+	1350 2300 1350 2125
+Wire Wire Line
+	1925 2300 1925 2375
+Wire Wire Line
+	1450 2300 1925 2300
+$Comp
+L power:GND #PWR013
+U 1 1 60F4D77A
+P 1350 3325
+F 0 "#PWR013" H 1350 3075 50  0001 C CNN
+F 1 "GND" H 1355 3152 50  0000 C CNN
+F 2 "" H 1350 3325 50  0001 C CNN
+F 3 "" H 1350 3325 50  0001 C CNN
+	1    1350 3325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 60F4C953
+P 1925 2375
+F 0 "#PWR06" H 1925 2125 50  0001 C CNN
+F 1 "GND" H 1930 2202 50  0000 C CNN
+F 2 "" H 1925 2375 50  0001 C CNN
+F 3 "" H 1925 2375 50  0001 C CNN
+	1    1925 2375
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	1050 3175 1775 3175
+Wire Notes Line
+	1050 2450 1775 2450
+Wire Notes Line
+	1050 3175 1050 2450
+Wire Notes Line
+	1775 3175 1775 2450
+Text Notes 1150 2925 0    50   ~ 0
+Buck Converter\nXL-4015\n12.6V
+$Comp
+L Connector:Screw_Terminal_01x02 J_Output1
+U 1 1 60F44053
+P 1350 3125
+F 0 "J_Output1" V 1225 2975 50  0000 R CNN
+F 1 "Screw_Terminal_01x02" V 1350 4025 50  0001 R CNN
+F 2 "" H 1350 3125 50  0001 C CNN
+F 3 "~" H 1350 3125 50  0001 C CNN
+	1    1350 3125
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J_Input1
+U 1 1 60F42123
+P 1450 2500
+F 0 "J_Input1" V 1322 2580 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" V 1450 1500 50  0001 L CNN
+F 2 "" H 1450 2500 50  0001 C CNN
+F 3 "~" H 1450 2500 50  0001 C CNN
+	1    1450 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1350 2100 1350 2125
+Text Notes 1425 2050 0    50   ~ 0
+14V to 24V Power Supply
+$Comp
+L power:+24V #PWR04
+U 1 1 60F3E412
+P 1350 2100
+F 0 "#PWR04" H 1350 1950 50  0001 C CNN
+F 1 "+24V" H 1365 2273 50  0000 C CNN
+F 2 "" H 1350 2100 50  0001 C CNN
+F 3 "" H 1350 2100 50  0001 C CNN
+	1    1350 2100
+	1    0    0    -1  
+$EndComp
+Text GLabel 14625 5800 2    50   Input ~ 0
+Pressure_Sensor_Input
+$Comp
+L power:GND #PWR019
+U 1 1 60ED202B
+P 13840 6055
+F 0 "#PWR019" H 13840 5805 50  0001 C CNN
+F 1 "GND" H 13690 5985 50  0000 C CNN
+F 2 "" H 13840 6055 50  0001 C CNN
+F 3 "" H 13840 6055 50  0001 C CNN
+	1    13840 6055
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:LM358 U1
+U 1 1 60E9011B
+P 13875 5800
+F 0 "U1" H 14015 5720 50  0000 L CNN
+F 1 "LM358" H 13975 5625 50  0000 L CNN
+F 2 "" H 13875 5800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 13875 5800 50  0001 C CNN
+	1    13875 5800
+	1    0    0    -1  
+$EndComp
+Text Notes 14225 5700 0    50   ~ 0
+Arduino Mega Pin
+Connection ~ 14275 5800
+Wire Wire Line
+	14275 5800 14625 5800
+Wire Wire Line
+	14275 5800 14175 5800
+$Comp
+L power:+5V #PWR05
+U 1 1 60EF70EC
+P 13840 5540
+F 0 "#PWR05" H 13840 5390 50  0001 C CNN
+F 1 "+5V" H 13855 5713 50  0000 C CNN
+F 2 "" H 13840 5540 50  0001 C CNN
+F 3 "" H 13840 5540 50  0001 C CNN
+	1    13840 5540
+	1    0    0    -1  
+$EndComp
+Text Label 14275 5800 0    50   ~ 0
+Output
+Connection ~ 13475 6300
+Wire Wire Line
+	13475 6550 13475 6300
+Wire Wire Line
+	13700 6550 13475 6550
+Connection ~ 14275 6300
+Wire Wire Line
+	14275 6550 14000 6550
+Wire Wire Line
+	14275 6300 14275 6550
+Wire Wire Line
+	14275 6300 14275 5800
+Wire Wire Line
+	14000 6300 14275 6300
+Connection ~ 13475 6025
+Wire Wire Line
+	13475 6300 13475 6025
+Wire Wire Line
+	13700 6300 13475 6300
+Wire Wire Line
+	13475 5900 13575 5900
+Wire Wire Line
+	13475 6025 13475 5900
+Wire Wire Line
+	13475 5700 13575 5700
+Wire Wire Line
+	13475 5600 13475 5700
+Wire Wire Line
+	13000 5600 13175 5600
+Wire Wire Line
+	13000 5900 13000 5600
+Wire Wire Line
+	12600 5900 13000 5900
+Wire Wire Line
+	13125 6025 13175 6025
+Wire Wire Line
+	13125 5700 13125 6025
+Wire Wire Line
+	12600 5700 13125 5700
+$Comp
+L Device:C C2
+U 1 1 60E8F52D
+P 13850 6550
+F 0 "C2" V 13725 6725 50  0000 C CNN
+F 1 "0.1uF" V 13800 6725 50  0000 C CNN
+F 2 "" H 13888 6400 50  0001 C CNN
+F 3 "~" H 13850 6550 50  0001 C CNN
+	1    13850 6550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 60E8DF4F
+P 13850 6300
+F 0 "R3" V 13725 6475 50  0000 C CNN
+F 1 "1M" V 13800 6475 50  0000 C CNN
+F 2 "" V 13780 6300 50  0001 C CNN
+F 3 "~" H 13850 6300 50  0001 C CNN
+	1    13850 6300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60E8C55F
+P 13325 6025
+F 0 "R2" V 13118 6025 50  0000 C CNN
+F 1 "4.7k" V 13209 6025 50  0000 C CNN
+F 2 "" V 13255 6025 50  0001 C CNN
+F 3 "~" H 13325 6025 50  0001 C CNN
+	1    13325 6025
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 60E8B161
+P 13325 5600
+F 0 "R1" V 13118 5600 50  0000 C CNN
+F 1 "4.7k" V 13209 5600 50  0000 C CNN
+F 2 "" V 13255 5600 50  0001 C CNN
+F 3 "~" H 13325 5600 50  0001 C CNN
+	1    13325 5600
+	0    1    1    0   
+$EndComp
+Connection ~ 12800 5800
+Wire Wire Line
+	13075 5800 12800 5800
+Wire Wire Line
+	13075 6025 13075 5800
+Connection ~ 13075 6425
+Wire Wire Line
+	13075 6325 13075 6425
+Wire Wire Line
+	12725 6000 12725 6425
+Wire Wire Line
+	12725 6425 13075 6425
+Wire Wire Line
+	12600 6000 12725 6000
+$Comp
+L Device:C C1
+U 1 1 60E7FE23
+P 13075 6175
+F 0 "C1" H 12825 6175 50  0000 L CNN
+F 1 "0.1uF" H 12775 6075 50  0000 L CNN
+F 2 "" H 13113 6025 50  0001 C CNN
+F 3 "~" H 13075 6175 50  0001 C CNN
+	1    13075 6175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12800 5800 12800 5575
+Wire Wire Line
+	12600 5800 12800 5800
+$Comp
+L power:GND #PWR02
+U 1 1 60E731C3
+P 13075 6425
+F 0 "#PWR02" H 13075 6175 50  0001 C CNN
+F 1 "GND" H 13080 6252 50  0000 C CNN
+F 2 "" H 13075 6425 50  0001 C CNN
+F 3 "" H 13075 6425 50  0001 C CNN
+	1    13075 6425
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR01
+U 1 1 60E726F5
+P 12800 5575
+F 0 "#PWR01" H 12800 5425 50  0001 C CNN
+F 1 "+5V" H 12815 5748 50  0000 C CNN
+F 2 "" H 12800 5575 50  0001 C CNN
+F 3 "" H 12800 5575 50  0001 C CNN
+	1    12800 5575
+	1    0    0    -1  
+$EndComp
+Text Notes 12175 5725 0    50   ~ 0
+-Out
+Text Notes 12200 5825 0    50   ~ 0
++5V
+Text Notes 12175 5925 0    50   ~ 0
++Out
+Text Notes 12225 6025 0    50   ~ 0
+Gnd
+$Comp
+L Connector:Conn_01x04_Female J1
+U 1 1 60E70E33
+P 12400 5900
+F 0 "J1" H 12425 6075 50  0000 L CNN
+F 1 "MPX2010DP" H 12250 6175 50  0000 L CNN
+F 2 "" H 12400 5900 50  0001 C CNN
+F 3 "~" H 12400 5900 50  0001 C CNN
+	1    12400 5900
+	-1   0    0    1   
+$EndComp
+Text GLabel 14300 2575 2    50   Input ~ 0
+Pressure_Sensor_Input
+Text GLabel 14300 2700 2    50   Input ~ 0
+SFM3300_Sensor_SDA
+Text GLabel 14300 2800 2    50   Input ~ 0
+SFM3300_Sensor_SCL
+Text Notes 13975 2475 0    50   ~ 0
+Arduino Mega Pins
+Wire Wire Line
+	13950 2575 14300 2575
+Wire Wire Line
+	13525 2925 14300 2925
+Text GLabel 14300 2925 2    59   Input ~ 0
+GND
+Wire Wire Line
+	13000 2800 14300 2800
+Wire Wire Line
+	12700 2700 14300 2700
+Connection ~ 13525 2300
+Wire Wire Line
+	13950 2300 13950 2575
+Wire Wire Line
+	13525 2300 13950 2300
+Wire Wire Line
+	12700 2700 12700 2600
+$Comp
+L Device:R R4
+U 1 1 60ED1CC5
+P 12700 2450
+F 0 "R4" V 12525 2450 50  0000 C CNN
+F 1 "10k" V 12600 2450 50  0000 C CNN
+F 2 "" V 12630 2450 50  0001 C CNN
+F 3 "~" H 12700 2450 50  0001 C CNN
+	1    12700 2450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12600 2700 12700 2700
+Connection ~ 12700 2700
+$Comp
+L Device:R R5
+U 1 1 60ED2D35
+P 13000 2500
+F 0 "R5" V 13100 2500 50  0000 C CNN
+F 1 "10k" V 13175 2500 50  0000 C CNN
+F 2 "" V 12930 2500 50  0001 C CNN
+F 3 "~" H 13000 2500 50  0001 C CNN
+	1    13000 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13000 2350 13000 2300
+Wire Wire Line
+	13000 2800 13000 2650
+Wire Wire Line
+	12700 2300 13000 2300
+Wire Wire Line
+	13000 2300 13525 2300
+Connection ~ 13000 2300
+Connection ~ 13525 2925
+Wire Wire Line
+	13525 2675 13525 2925
+Wire Wire Line
+	13525 2375 13525 2300
+Wire Wire Line
+	12500 2925 13525 2925
+Wire Wire Line
+	12500 2825 12500 2925
+Connection ~ 13000 2800
+Wire Wire Line
+	12550 2800 13000 2800
+Wire Wire Line
+	12550 2725 12550 2800
+Wire Wire Line
+	12500 2725 12550 2725
+Wire Wire Line
+	12600 2625 12600 2700
+Wire Wire Line
+	12500 2625 12600 2625
+Connection ~ 12700 2300
+Wire Wire Line
+	12500 2300 12500 2525
+Wire Wire Line
+	12500 2300 12700 2300
+Wire Wire Line
+	12700 2300 12700 2250
+$Comp
+L Device:C C3
+U 1 1 60EA8413
+P 13525 2525
+F 0 "C3" V 13675 2525 50  0000 C CNN
+F 1 "0.1uF" V 13750 2525 50  0000 C CNN
+F 2 "" H 13563 2375 50  0001 C CNN
+F 3 "~" H 13525 2525 50  0001 C CNN
+	1    13525 2525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR03
+U 1 1 60EB7FA5
+P 12700 2250
+F 0 "#PWR03" H 12700 2100 50  0001 C CNN
+F 1 "+5V" H 12715 2423 50  0000 C CNN
+F 2 "" H 12700 2250 50  0001 C CNN
+F 3 "" H 12700 2250 50  0001 C CNN
+	1    12700 2250
+	1    0    0    -1  
+$EndComp
+Text Notes 12100 2550 0    50   ~ 0
++5V
+Text Notes 12125 2650 0    50   ~ 0
+SDA\n
+Text Notes 12125 2750 0    50   ~ 0
+SCL
+Text Notes 12125 2850 0    50   ~ 0
+Gnd
+$Comp
+L Connector:Conn_01x04_Female J2
+U 1 1 60EB7E4D
+P 12300 2725
+F 0 "J2" H 12350 2300 50  0000 L CNN
+F 1 "SFM3300" H 12200 2400 50  0000 L CNN
+F 2 "" H 12300 2725 50  0001 C CNN
+F 3 "~" H 12300 2725 50  0001 C CNN
+	1    12300 2725
+	-1   0    0    1   
+$EndComp
+Text Notes 3775 9025 2    79   ~ 0
+Turbine Controller Module
+Text Notes 3375 8800 2    47   ~ 0
+Turbine Controller Input
+Text Notes 3275 9225 2    47   ~ 0
+Turbine Interface
+Text Notes 3250 9775 1    39   ~ 0
+Ground
+Text Notes 3150 9750 1    39   ~ 0
+Power
+Text Notes 3050 9800 1    39   ~ 0
+Encoder
+Text Notes 2950 9675 1    39   ~ 0
+P_3
+Text Notes 2850 9675 1    39   ~ 0
+P_2\n
+Text Notes 2750 9675 1    39   ~ 0
+P_1
+$Comp
+L Connector:Screw_Terminal_01x06 J8
+U 1 1 6262B8D3
+P 2925 9325
+F 0 "J8" V 2843 8937 50  0000 R CNN
+F 1 "Screw_Terminal_01x06" V 2798 8937 50  0001 R CNN
+F 2 "" H 2925 9325 50  0001 C CNN
+F 3 "~" H 2925 9325 50  0001 C CNN
+	1    2925 9325
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3275 8225 3275 8325
+Wire Wire Line
+	3075 8225 3275 8225
+Wire Wire Line
+	3075 8450 3075 8225
+$Comp
+L power:GND #PWR016
+U 1 1 62623146
+P 3275 8325
+F 0 "#PWR016" H 3275 8075 50  0001 C CNN
+F 1 "GND" H 3280 8152 50  0000 C CNN
+F 2 "" H 3275 8325 50  0001 C CNN
+F 3 "" H 3275 8325 50  0001 C CNN
+	1    3275 8325
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2775 8225 2975 8225
+Wire Wire Line
+	2975 8225 2975 8450
+Text GLabel 2775 8225 0    50   Input ~ 0
+Turbine_Control
+Wire Wire Line
+	2875 8375 2875 8450
+Wire Wire Line
+	2775 8375 2875 8375
+Text GLabel 2775 8375 0    50   Input ~ 0
+12.6V
+$Comp
+L Connector:Screw_Terminal_01x03 J7
+U 1 1 62610CFD
+P 2975 8650
+F 0 "J7" V 2975 8375 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" V 3075 8200 50  0001 L CNN
+F 2 "" H 2975 8650 50  0001 C CNN
+F 3 "~" H 2975 8650 50  0001 C CNN
+	1    2975 8650
+	0    1    1    0   
+$EndComp
+Wire Notes Line
+	1900 9375 1900 8600
+Wire Notes Line
+	4025 9375 1900 9375
+Wire Notes Line
+	4025 8600 4025 9375
+Wire Notes Line
+	1900 8600 4025 8600
+Text Notes 9300 9025 2    79   ~ 0
+Pressure Release Servo
+Wire Wire Line
+	8650 8375 8850 8375
+Wire Wire Line
+	8650 8450 8650 8375
+$Comp
+L power:GND #PWR?
+U 1 1 62913323
+P 8850 8375
+F 0 "#PWR?" H 8850 8125 50  0001 C CNN
+F 1 "GND" H 8855 8202 50  0000 C CNN
+F 2 "" H 8850 8375 50  0001 C CNN
+F 3 "" H 8850 8375 50  0001 C CNN
+	1    8850 8375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 8225 8550 8450
+Wire Wire Line
+	8450 8375 8450 8450
+Wire Wire Line
+	8350 8375 8450 8375
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 6291332F
+P 8550 8650
+F 0 "J?" V 8550 8375 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" V 8650 8200 50  0001 L CNN
+F 2 "" H 8550 8650 50  0001 C CNN
+F 3 "~" H 8550 8650 50  0001 C CNN
+	1    8550 8650
+	0    1    1    0   
+$EndComp
+Wire Notes Line
+	7475 9375 7475 8600
+Wire Notes Line
+	9600 9375 7475 9375
+Wire Notes Line
+	9600 8600 9600 9375
+Wire Notes Line
+	7475 8600 9600 8600
+$Comp
+L power:+5V #PWR?
+U 1 1 629259EC
+P 8550 8225
+F 0 "#PWR?" H 8550 8075 50  0001 C CNN
+F 1 "+5V" H 8565 8398 50  0000 C CNN
+F 2 "" H 8550 8225 50  0001 C CNN
+F 3 "" H 8550 8225 50  0001 C CNN
+	1    8550 8225
+	1    0    0    -1  
+$EndComp
+Text GLabel 8350 8375 0    50   Input ~ 0
+Pressure_Release_Servo
+Text Notes 14450 9025 2    79   ~ 0
+HC-05 Bluetooth Module
+Wire Wire Line
+	13800 8275 14000 8275
+Wire Wire Line
+	13800 8450 13800 8275
+$Comp
+L power:GND #PWR?
+U 1 1 62950194
+P 14000 8275
+F 0 "#PWR?" H 14000 8025 50  0001 C CNN
+F 1 "GND" H 14005 8102 50  0000 C CNN
+F 2 "" H 14000 8275 50  0001 C CNN
+F 3 "" H 14000 8275 50  0001 C CNN
+	1    14000 8275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13700 8225 13700 8450
+Wire Notes Line
+	12625 9375 12625 8600
+Wire Notes Line
+	14750 9375 12625 9375
+Wire Notes Line
+	14750 8600 14750 9375
+Wire Notes Line
+	12625 8600 14750 8600
+$Comp
+L power:+5V #PWR?
+U 1 1 629501A7
+P 13700 8225
+F 0 "#PWR?" H 13700 8075 50  0001 C CNN
+F 1 "+5V" H 13715 8398 50  0000 C CNN
+F 2 "" H 13700 8225 50  0001 C CNN
+F 3 "" H 13700 8225 50  0001 C CNN
+	1    13700 8225
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x04 J?
+U 1 1 6295877D
+P 13700 8650
+F 0 "J?" V 13800 8575 50  0000 L CNN
+F 1 "Screw_Terminal_01x04" V 13663 8830 50  0001 L CNN
+F 2 "" H 13700 8650 50  0001 C CNN
+F 3 "~" H 13700 8650 50  0001 C CNN
+	1    13700 8650
+	0    1    1    0   
+$EndComp
+Text GLabel 13400 8275 0    50   Input ~ 0
+Bluetooth_Rx
+Text GLabel 13400 8400 0    50   Input ~ 0
+Bluetooth_Tx
+Wire Wire Line
+	13400 8275 13600 8275
+Wire Wire Line
+	13600 8275 13600 8450
+Wire Wire Line
+	13400 8400 13500 8400
+Wire Wire Line
+	13500 8400 13500 8450
+Text Notes 6025 875  2    197  ~ 0
+Turbine-based Ventilator Schematic
+Wire Wire Line
+	2500 3550 2700 3550
+Wire Wire Line
+	3075 3550 2900 3550
+Text GLabel 3075 3550 2    50   Output ~ 0
+12.6V
+Text GLabel 3275 5350 0    50   Input ~ 0
+12.6V
+Wire Wire Line
+	3275 5875 3400 5875
+Wire Wire Line
+	3275 5350 3400 5350
+Wire Wire Line
+	3400 5350 3400 5875
+Connection ~ 3400 5875
+Wire Wire Line
+	3400 5875 3525 5875
+Wire Notes Line
+	475  7350 16050 7350
+Wire Notes Line
+	11200 11225 11200 1075
+Wire Notes Line
+	475  4450 6200 4450
+Wire Notes Line
+	11200 4450 16075 4450
+Wire Notes Line
+	475  4750 6200 4750
+Text Notes 525  1250 0    98   ~ 0
+Power Distribution
+Text Notes 525  7550 0    98   ~ 0
+Turbine Controller Module
+Text Notes 11250 4675 0    98   ~ 0
+MPX2010DP (Differential Pressure Sensor)
+Wire Notes Line
+	11200 4750 16075 4750
+Text Notes 11250 7575 0    98   ~ 0
+HC-05 Bluetooth Module
+Wire Notes Line
+	475  7650 16075 7650
+Text Notes 6275 7575 0    98   ~ 0
+Pressure Release Servo
+Text Notes 6275 1250 0    98   ~ 0
+Microcontroller (Arduino)
+Wire Notes Line
+	475  1325 16075 1325
+Text Notes 11275 1275 0    98   ~ 0
+SFM3300 (Flow Meter)
+Wire Notes Line
+	475  1075 16075 1075
+Wire Notes Line
+	6200 1075 6200 11225
+$EndSCHEMATC
