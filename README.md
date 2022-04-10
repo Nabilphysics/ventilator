@@ -3,8 +3,19 @@
 
 *A Turbine Based Medical Ventilator*
 
-<br> [Website] 
-<br> Video [Playlist]
+---
+
+<div align = 'center'>
+
+  **⸢ [Website] ⸥**
+  **⸢ [Videos] ⸥**
+  
+</div>
+
+---
+
+<br>
+
 <br> Contributors:
 <br> Syed Razwanul Haque Nabil (Team Lead, Code, Algorithm, Circuit)
 <br> [Facebook][Nabil Facebook] and [LinkedIn][Nabil LinkedIn]
@@ -21,7 +32,7 @@
 <!----------------------------------------------------------------------------->
 
 [Website]: https://www.nabilbd.com/ventilator
-[Playlist]: https://www.youtube.com/playlist?list=PLWOXOpFr-Z50Q3X0qPz6WNfCwyVcnYaeS 
+[Videos]: https://www.youtube.com/playlist?list=PLWOXOpFr-Z50Q3X0qPz6WNfCwyVcnYaeS 
 
 
 <!-------------------------------{ Contributors }------------------------------>
