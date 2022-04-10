@@ -1,6 +1,9 @@
-# Turbine Based Medical Ventilator
-Open source turbine based medical ventilator. 
-<br> [Webpage] 
+
+# Ventilator
+
+*A Turbine Based Medical Ventilator*
+
+<br> [Website] 
 <br> Video [Playlist]
 <br> Contributors:
 <br> Syed Razwanul Haque Nabil (Team Lead, Code, Algorithm, Circuit)
