@@ -20,9 +20,6 @@
 ![Machine] 
 
 <br>
-
----
-
 <br>
 
 ## Concept
@@ -32,9 +29,6 @@
 ![Concept]
 
 <br>
-
----
-
 <br>
 
 ## Team
