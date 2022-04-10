@@ -1,5 +1,5 @@
 
-# Ventilator
+# Ventilator [![Badge License]][License]
 
 *A Turbine Based Medical Ventilator*
 
@@ -87,11 +87,15 @@
 [Website]: https://www.nabilbd.com/ventilator
 [Videos]: https://www.youtube.com/playlist?list=PLWOXOpFr-Z50Q3X0qPz6WNfCwyVcnYaeS 
 
+[License]: LICENSE
 
 <!----------------------------------{ Badges }--------------------------------->
 
 [Badge Facebook]: https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white
 [Badge LinkedIn]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[Badge License]: https://licensebuttons.net/l/by-sa/4.0/80x15.png
+
+
 
 
 <!-------------------------------{ Contributors }------------------------------>
