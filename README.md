@@ -4,7 +4,7 @@
 *A Turbine Based Medical Ventilator*
 
 ---
-
+Publication: https://dl.acm.org/doi/abs/10.1145/3502871.3502893
 <div align = 'center'>
 
   **⸢ [Website] ⸥**
