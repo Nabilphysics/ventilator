@@ -4,8 +4,9 @@
 *A Turbine Based Medical Ventilator*
 
 ---
+Publication 1: HardwareX :https://www.hardware-x.com/article/S2468-0672(22)00095-5/fulltext </br>
 Publication: https://dl.acm.org/doi/abs/10.1145/3502871.3502893
-</br> Publication Journal (PrePrint): https://www.researchgate.net/publication/358369893_Cost-effective_and_power-efficient_portable_turbine-based_emergency_ventilator
+</br> 
 <div align = 'center'>
 
   **⸢ [Website] ⸥**
